@@ -1,5 +1,5 @@
+import 'package:app_chat/login_or_signup_ui/login_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/material/button_style.dart';
 class SignInOrSignUp extends StatelessWidget {
   const SignInOrSignUp({Key? key}) : super(key: key);
 
@@ -14,7 +14,9 @@ class SignInOrSignUp extends StatelessWidget {
             FlatButton(
               color: Colors.greenAccent,
               shape: RoundedRectangleBorder( borderRadius: BorderRadius.circular(30.0),),
-              onPressed: () => {},
+              onPressed: () => Navigator.push(context,
+                MaterialPageRoute(builder: (context) => LoginScreen()),
+              ),
               child: Text('Sign In'),
             ),
 
@@ -27,14 +29,6 @@ class SignInOrSignUp extends StatelessWidget {
               child: Text('Sign Up'),
             ),
           ],
-        ),
-      ),
-      bottomNavigationBar: BottomAppBar(
-        child: Container (
-          child: TextButton(
-            onPressed: () {},
-            child: Text('Forgot Password ?'),
-          ),
         ),
       ),
     );
